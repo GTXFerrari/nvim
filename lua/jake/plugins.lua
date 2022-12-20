@@ -70,6 +70,8 @@ use {
 -- Colorschemes
   use {"folke/tokyonight.nvim", }
   use {"ellisonleao/gruvbox.nvim" }
+  use {"Mofiqul/dracula.nvim" }
+
 
 -- CMP (Completions)
   use { 'hrsh7th/cmp-cmdline', }
@@ -102,6 +104,8 @@ use {
 -- Git 
   use { 'lewis6991/gitsigns.nvim', }
 
+-- Fun
+  use { 'ThePrimeagen/vim-be-good'}
 -- Keep this at bottom
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
