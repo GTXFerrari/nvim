@@ -104,6 +104,10 @@ use {
 -- Git 
   use { 'lewis6991/gitsigns.nvim', }
 
+-- Terminal
+  use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
+  require("toggleterm").setup()
+  end}
 -- Fun
   use { 'ThePrimeagen/vim-be-good'}
 -- Keep this at bottom
