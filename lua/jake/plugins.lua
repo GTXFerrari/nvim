@@ -50,8 +50,9 @@ return packer.startup(function(use)
   use { 'windwp/nvim-autopairs', }          -- Autopairs, integrates with both cmp & treesitter
   use { 'numToStr/Comment.nvim' }             -- Easily comment stuff (language aware)
   use { "JoosepAlviste/nvim-ts-context-commentstring", }
+
 -- MD Preview
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 -- Lualine
 use {
@@ -59,7 +60,7 @@ use {
 	requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 
--- Treesitter
+-- Nvim-Tree
 use { 
   'nvim-tree/nvim-tree.lua',
   requires = {
@@ -79,7 +80,7 @@ use {
   use { "hrsh7th/cmp-buffer", }       -- buffer completions
   use { "hrsh7th/cmp-path", }         -- path completions
   use { "hrsh7th/cmp-nvim-lsp", }
-  use { "hrsh7th/cmp-nvim-lua", } 
+  use { "hrsh7th/cmp-nvim-lua", }
 
 -- Snippets
   use { "L3MON4D3/LuaSnip", }         -- Snippet engine
@@ -87,9 +88,8 @@ use {
   use { "rafamadriz/friendly-snippets", } -- A bunch of snippets to use 
 
 -- LSP 
+  use { 'williamboman/mason.nvim',  }   -- Package Manager for LSP serversm formatters, & linters
   use { 'neovim/nvim-lspconfig',  }     -- enable LSP
---  use { 'williamboman/nvim-lsp-installer', }    -- simple to use language server installer 
-  use { 'williamboman/mason.nvim',  }
   use { 'williamboman/mason.lspconfig.nvim', }
   use { 'jose-elias-alvarez/null-ls.nvim', }    -- for formatterss and linters
   use { 'RRethy/vim-illuminate', }
@@ -108,9 +108,11 @@ use {
   use { 'akinsho/toggleterm.nvim', tag = '*', config = function()
   require("toggleterm").setup()
   end}
--- Fun
+
+  -- Fun
   use { 'ThePrimeagen/vim-be-good'}
--- Keep this at bottom
+
+  -- Keep this at bottom
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
