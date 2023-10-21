@@ -29,6 +29,7 @@ return {
 			ensure_installed = {
 				"bashls", -- Bash
 				"cssls", -- CSS
+				"emmet_ls",
 				"html", -- HTML
 				"lua_ls", -- Lua
 				"marksman", -- Markdown
