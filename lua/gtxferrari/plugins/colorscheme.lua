@@ -1,22 +1,22 @@
 -- Tokyo Night
+return {
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd([[colorscheme tokyonight]])
+	end,
+}
+
+-- Dracula
 -- return {
---   "folke/tokyonight.nvim",
+--   "Mofiqul/dracula.nvim",
 --   lazy = false,
 --   priority = 1000,
 --   config = function()
---     vim.cmd([[colorscheme tokyonight]])
+--     vim.cmd([[colorscheme dracula]])
 --   end,
 -- }
-
--- Dracula
-return {
-  "Mofiqul/dracula.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme dracula]])
-  end,
-}
 
 -- Catppuccin
 -- return {
