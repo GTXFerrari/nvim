@@ -16,7 +16,7 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal -- 
+-- Normal --
 -- Better Window nav (Move between buffers w/ Ctrl+{h,j,k,l}
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -37,7 +37,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
 
 -- Clear Highlights
-keymap ("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Keep cursor towards the beginning of line when using J
 keymap("n", "J", "mzJ`z")
@@ -50,9 +50,11 @@ keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Better paste (Keeps current value in register when pasting instead of grabbing new value)
-keymap ("v", "p", '"_dp', opts)
-
+keymap("v", "p", '"_dp', opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+
+-- Toggleterm
+keymap("n", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
