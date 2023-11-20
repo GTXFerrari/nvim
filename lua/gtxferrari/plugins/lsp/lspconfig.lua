@@ -154,6 +154,12 @@ return {
 			settings = {
 				bashIde = {
 					globPattern = "*@(.sh|.inc|.bash|.command)",
+
+					lspconfig["taplo"].setup({
+						capabilities = capabilities,
+						on_attach = on_attach,
+						filetypes = { "toml" },
+					}),
 				},
 			},
 		})
