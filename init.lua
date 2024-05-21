@@ -112,6 +112,17 @@ vim.keymap.set('n', '<C-Down>', ':resize -2<CR>', { desc = 'Resize window down' 
 vim.keymap.set('n', '<C-Left>', ':vertical-resize +2<CR>', { desc = 'Resize window left' })
 vim.keymap.set('n', '<C-Right>', ':vertical-resize -2<CR>', { desc = 'Resize window right' })
 
+-- Navigate buffers
+vim.keymap.set('n', '<S-l>', ':bnext<CR>', { desc = 'Cycle next buffer using Shift + l' })
+vim.keymap.set('n', '<S-h>', ':bprevious<CR>', { desc = 'Cycle previous buffer using Shift + h' })
+
+-- Move highlighted text together
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Chmod
+vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { desc = 'make a file executable using leader + x' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
