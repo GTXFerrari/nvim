@@ -211,6 +211,7 @@ return {
         'stylua', -- Used to format Lua code
         'powershell_es',
         'basedpyright',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
