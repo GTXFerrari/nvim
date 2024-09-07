@@ -1,3 +1,11 @@
+-- +==================================================================+
+-- |      ██████╗ ██████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗     |
+-- |     ██╔═══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝     |
+-- |     ██║   ██║██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║███████╗     |
+-- |     ██║   ██║██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║╚════██║     |
+-- |     ╚██████╔╝██║        ██║   ██║╚██████╔╝██║ ╚████║███████║     |
+-- |      ╚═════╝ ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝     |
+-- +==================================================================+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -5,9 +13,10 @@
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
+
+-- 24-bit color support
+vim.opt.termguicolors = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -62,4 +71,14 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- vim: ts=2 sts=2 sw=2 et
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Set linewrap
+vim.opt.wrap = false
+
+-- Set default shell for built-in terminal
+if vim.loop.os_uname().sysname == 'Windows_NT' then
+  vim.opt.shell = 'pwsh'
+end
